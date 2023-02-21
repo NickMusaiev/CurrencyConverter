@@ -25,8 +25,6 @@ class App extends React.Component {
     })
       .then(data => data.json())
       .then(data => {
-        console.log(data.quotes.USDUAH)
-        console.log(data.quotes.USDEUR)
         this.setState({ EUR: ((2 - data.quotes.USDEUR) * data.quotes.USDUAH).toFixed(2) });
         this.setState({ USD: (data.quotes.USDUAH).toFixed(2) });
         this.setState({ UAH: (data.quotes.USDUAH / data.quotes.USDUAH).toFixed(2) });
